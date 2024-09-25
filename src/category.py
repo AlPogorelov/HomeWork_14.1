@@ -1,3 +1,6 @@
+from src.product import Product
+
+
 class Category:
     name: str
     description: str
@@ -26,8 +29,11 @@ class Category:
         return product_str
 
     def add_product(self, product):
-        self.__products.append(product)
-        Category.product_count += 1
+        if isinstance(product, Product):
+            Category.product_count += 1
+            return self.__products.append(product)
+
+        raise TypeError
 
     @property
     def product_list(self):

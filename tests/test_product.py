@@ -51,3 +51,31 @@ def test_product_iterator(product_iterator):
 
     with pytest.raises(StopIteration):
         next(product_iterator)
+
+
+def test_init_smartphone(product_smartphone1):
+    assert product_smartphone1.name == "Samsung Galaxy S23 Ultra"
+    assert product_smartphone1.efficiency == 95.5
+    assert product_smartphone1.model == "S23 Ultra"
+    assert product_smartphone1.memory == 256
+    assert product_smartphone1.color == "Серый"
+
+
+def test_init_lawngrass(product_lawngrass1):
+    assert product_lawngrass1.name == "Газонная трава"
+    assert product_lawngrass1.country == "Россия"
+    assert product_lawngrass1.germination_period == "7 дней"
+    assert product_lawngrass1.color == "Зеленый"
+
+
+def test_product_smartphone_add(product_smartphone1, product_smartphone2):
+    assert product_smartphone1 + product_smartphone2 == 600.0
+
+
+def test_product_lawngrass_add(product_lawngrass1, product_lawngrass2):
+    assert product_lawngrass1 + product_lawngrass2 == 1400.0
+
+
+def test_product_add_error(product_smartphone1, product_lawngrass1):
+    with pytest.raises(TypeError):
+        product_smartphone1 + product_lawngrass1
