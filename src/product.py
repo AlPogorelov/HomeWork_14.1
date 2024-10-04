@@ -1,4 +1,16 @@
-class Product:
+from abc import ABC, abstractmethod
+
+from src.print_mixinlog import MixinLogProduct
+
+
+class BaseProduct(ABC):
+    @classmethod
+    @abstractmethod
+    def new_product(cls, *args, **kwargs):
+        pass
+
+
+class Product(MixinLogProduct, BaseProduct):
     name: str
     description: str
     price: float
@@ -9,6 +21,7 @@ class Product:
         self.description = description
         self.__price = price
         self.quantity = quantity
+        super().__init__()
 
     def __str__(self):
         return f"{self.name}, {self.price} руб. Остаток: {self.quantity} шт."
