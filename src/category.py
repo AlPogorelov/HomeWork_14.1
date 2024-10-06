@@ -35,6 +35,16 @@ class Category:
 
         raise TypeError
 
+    def middle_price(self):
+        try:
+            return sum([product.price for product in self.__products]) / len(self.__products)
+
+        except TypeError:
+            return 0
+        except ZeroDivisionError:
+            return 0
+
+
     @property
     def product_list(self):
         return self.__products

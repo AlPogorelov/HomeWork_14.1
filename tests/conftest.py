@@ -62,3 +62,12 @@ def product_lawngrass1():
 @pytest.fixture
 def product_lawngrass2():
     return LawnGrass("Газонная трава 2", "Выносливая трава", 200.0, 2, "США", "5 дней", "Темно-зеленый")
+
+@pytest.fixture
+def zero_list_category():
+    return Category(
+        name="Смартфон",
+        description="Смартфоны",
+        products=[],
+    )
+
