@@ -62,3 +62,18 @@ def product_lawngrass1():
 @pytest.fixture
 def product_lawngrass2():
     return LawnGrass("Газонная трава 2", "Выносливая трава", 200.0, 2, "США", "5 дней", "Темно-зеленый")
+
+
+@pytest.fixture
+def zero_list_category():
+    return Category(
+        name="Смартфон",
+        description="Смартфоны",
+        products=[],
+    )
+@pytest.fixture
+def data_json():
+    return [{'name': 'Смартфоны', 'description': 'Смартфоны, как средство',
+             'products': [{'name': 'Samsung Galaxy C23 Ultra', 'description': '256GB, Серый цвет, 200MP камера', 'price': 180000.0, 'quantity': 5}]},
+            {'name': 'Телевизоры', 'description': 'Современный телевизор, который',
+             'products': [{'name': '55 QLED 4K', 'description': 'Фоновая подсветка', 'price': 123000.0, 'quantity': 7}]}]
