@@ -1,9 +1,3 @@
-import pytest
-
-from src.category import Category
-from src.product import Product
-
-
 def test_middle_price(second_category):
     assert second_category.middle_price() == 190000.0
 

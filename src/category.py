@@ -44,7 +44,6 @@ class Category:
         except ZeroDivisionError:
             return 0
 
-
     @property
     def product_list(self):
         return self.__products
